@@ -15,8 +15,9 @@ import nextjs from './assets/nextjs.png';
 import unity from './assets/unity.png';
 import angular from './assets/angular.png';
 import cSharp from './assets/cSharp.png';
-
-
+import github from './assets/Github.png';
+import linkedin from './assets/Linkedin.png';
+import insta from './assets/Instagram.png';
 import useEmblaCarousel from "embla-carousel-react";
 import iTrack from "./assets/iTrack.png";
 import { useEffect, useState } from "react";
@@ -323,7 +324,18 @@ export default function Home() {
       </form>
 
       <p>{status}</p>
+
+          <div className="footer" style={{display: "flex"}}>
+      <a href="https://github.com/whitzz014"><Image alt="github" src={github} ></Image></a>
+      <a href="https://www.linkedin.com/in/brock-whitson-8ba627274/?originalSubdomain=ca"><Image alt="linkedin" src={linkedin} ></Image></a>
+      <a href="https://www.instagram.com/brock.whitson/?hl=en"><Image alt="instagram" src={insta} ></Image></a>
     </div>
+    </div>
+
+
+
+
+
       </main>
     );
   }
