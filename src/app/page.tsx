@@ -56,7 +56,7 @@ export default function Home() {
         name: formData.name,
         email: formData.email,
         message: formData.message,
-        to_email: "your-email@example.com", // Replace with your email
+        to_email: "brocko.whitson@gmail.com", // Replace with your email
       };
   
       emailjs
