@@ -58,7 +58,7 @@ export default function Home() {
     };
   
     emailjs
-      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams, "YOUR_USER_ID")
+      .send("service_laemygd", "udi4SquQEEMHLwNpO", templateParams, "udi4SquQEEMHLwNpO")
       .then(() => {
         setStatus("Email sent successfully!");
         setFormData({ name: "", email: "", message: "" }); // Reset form
