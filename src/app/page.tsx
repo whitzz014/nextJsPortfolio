@@ -60,7 +60,7 @@ export default function Home() {
       };
   
       emailjs
-        .send("service_laemygd", "udi4SquQEEMHLwNpO", templateParams, "udi4SquQEEMHLwNpO")
+        .send("service_laemygd", "template_sk2zp8r", templateParams, "udi4SquQEEMHLwNpO")
         .then(() => {
           setStatus("Email sent successfully!");
           setFormData({ name: "", email: "", message: "" }); // Reset form
