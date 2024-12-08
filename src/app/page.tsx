@@ -51,24 +51,26 @@ export default function Home() {
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault(); // Prevent page reload
       setStatus("Sending...");
-  
+    
       const templateParams = {
-        name: formData.name,
-        email: formData.email,
+        from_name: formData.name,
+        reply_to: formData.email,
         message: formData.message,
-        to_email: "brocko.whitson@gmail.com", // Replace with your email
-      };
-  
+        to_email: "brocko.whitson@gmail.com", 
+    };
+    
       emailjs
         .send("service_laemygd", "template_sk2zp8r", templateParams, "udi4SquQEEMHLwNpO")
         .then(() => {
           setStatus("Email sent successfully!");
-          setFormData({ name: "", email: "", message: "" }); // Reset form
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error("Error sending email:", error);
           setStatus("Error sending email. Please try again later.");
-      });
-  };
+        });
+    
+      setFormData({ name: "", email: "", message: "" });
+    };
   
 
   
@@ -317,6 +319,7 @@ export default function Home() {
         <br />
 
         <button type="submit">Send Message</button>
+        
       </form>
 
       <p>{status}</p>
