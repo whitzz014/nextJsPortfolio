@@ -45,32 +45,29 @@ export default function Home() {
       [name]: value,
     });
   };
-
-   // Function to send email using emailjs
-   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent page reload
     setStatus("Sending...");
   
     const templateParams = {
       name: formData.name,
       email: formData.email,
       message: formData.message,
-      to_email: "brocko.whitson@gmail.com", // hard-coded recipient email
+      to_email: "your-email@example.com", // Use your actual email
     };
   
     emailjs
       .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams, "YOUR_USER_ID")
-      .then(
-        (result) => {
-          setStatus("Email sent successfully!");
-          setFormData({ name: "", email: "", message: "" }); // Reset form
-        },
-        (error) => {
-          setStatus("Error sending email. Please try again later.");
-        }
-      );
+      .then(() => {
+        setStatus("Email sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // Reset form
+      })
+      .catch(() => {
+        setStatus("Error sending email. Please try again later.");
+      });
   };
-
+  
 
   
     return (
