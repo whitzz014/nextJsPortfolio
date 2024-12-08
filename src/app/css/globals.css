@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  background-color: #202020;
+  transition-property: opacity, background-color, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+
+/* Title Page Design */
+.nameplace{
+  color: white;
+  margin-top: 10%;
+  padding-left: 10%;
+}
+
+.firstPage {
+  display: flex; /* Keep the flex layout as is */
+  width: 100%;
+  position: relative; /* Make the container relative for positioning the third p */
+}
+
+.titleName {
+  font-size: 2000%;
+  line-height: 75%;
+}
+
+.nameplace p:nth-child(2){
+  margin-top: 100px;
+  font-size: 500%;
+}
+
+.firstPage p:nth-child(3) {
+  font-size: 500%;
+  text-align: right;
+  color: #fff;
+  position: absolute; /* Position the third p absolutely */
+  bottom: 0; /* Push it to the bottom of the container */
+  width: 97%;
+}
+
+.homePageImg {
+  margin-top: 50px;
+  height: 75vh;
+  width: auto; 
+  margin-left: 300px;
+}
+
+/* About Page Design */
+.about {
+  position: relative; /* To allow absolute positioning inside this container */
+  padding-top: 5%;
+}
+
+
+.aboutMe{
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 300%;
+}
+
+.pitching {
+ 
+  max-width: 90%;
+  margin: 0 auto;
+  transition: transform 0.1s ease-out;
+}
+
+
+
+.about h2{
+  color: white;
+  font-size: 3000%;
+  position: absolute;
+}
+
+
+
+
+
+
+/* Projects Design */
+
+.embla__slide h3{
+  font-size: 300%;
+  color: #fff;
+  text-align: center;
+}
+
+/* Make the navbar sticky */
+.sticky-nav { 
+ font-size: 150%;
+  position: sticky;
+  top: 0; 
+  z-index: 10; 
+  background-color: transparent; 
+}
+
+.skills {
+  margin-top: 30%; /* Adjust based on the height of the about section */
+}
+.skills h2, .projects h2, .contact h2{
+  color: white;
+  font-size: 1000%;
+  bottom: 0;
+}
+
+
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+
+/* CONTACT FORM  */
+
+/* General Form Styling */
+form {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* Label Styling */
+label {
+  font-size: 200%;
+  padding-right: 2%;
+  color: #fff;
+  display: block; /* Ensure label is block-level and appears above the input/textarea */
+  margin-bottom: 10px; /* Add some spacing between label and input/textarea */
+}
+
+/* Input and Textarea Styling */
+input,
+textarea {
+  font-size: 2rem;
+  background-color: #202020;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  font-family: monospace;
+  padding: 10px; /* Add padding inside input/textarea */
+  width: 50%; /* Set width of input/textarea to 50% */
+  margin: 0 auto; /* Center input/textarea horizontally */
+}
+
+/* Focus Effect for Input/Textarea */
+input:focus,
+textarea:focus {
+  border: 5px solid #FF8200;
+}
+
+/* Textarea Specific Styling */
+textarea {
+  height: 20vh;
+}
+
+/* Message Label Adjustment */
+label[for="message"] {
+  margin-bottom: 10px; /* Adjust spacing as needed */
+  display: block; /* Ensure label is displayed as block element */
+}
+
+/* Button Styling */
+button {
+  background-color: #202020;
+  color: white;
+  border: white 1px solid;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 30%; /* Set width of the button to 30% */
+  margin: 20px auto; /* Center button horizontally */
+}
+
+button:hover {
+  background-color: white;
+  color: #202020;
+  border: #202020 1px solid;
+}

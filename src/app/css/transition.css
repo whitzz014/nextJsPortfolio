@@ -1,0 +1,7 @@
+.page-transition {
+  opacity: 0;
+  background: rgb(0, 0, 0);
+  transform: translateY(40px);
+  filter: blur(12px);
+  transition: all 0.5s ease-in-out;
+}
