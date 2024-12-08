@@ -32,39 +32,41 @@ export default function Home() {
     }, [emblaApi]);
 
     const [formData, setFormData] = useState({
-        name:"",
-        email:"",
-        message:"",
+      name: "",
+      email: "",
+      message: "",
     });
     const [status, setStatus] = useState("");
-  // Function to handle form input changes
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent page reload
-    setStatus("Sending...");
-  
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-      to_email: "your-email@example.com", // Use your actual email
+    // Function to handle form input changes
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
     };
   
-    emailjs
-      .send("service_laemygd", "udi4SquQEEMHLwNpO", templateParams, "udi4SquQEEMHLwNpO")
-      .then(() => {
-        setStatus("Email sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Reset form
-      })
-      .catch(() => {
-        setStatus("Error sending email. Please try again later.");
+    // Handle form submission
+    const handleSubmit = (e: React.FormEvent) => {
+      e.preventDefault(); // Prevent page reload
+      setStatus("Sending...");
+  
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        to_email: "your-email@example.com", // Replace with your email
+      };
+  
+      emailjs
+        .send("service_laemygd", "udi4SquQEEMHLwNpO", templateParams, "udi4SquQEEMHLwNpO")
+        .then(() => {
+          setStatus("Email sent successfully!");
+          setFormData({ name: "", email: "", message: "" }); // Reset form
+        })
+        .catch(() => {
+          setStatus("Error sending email. Please try again later.");
       });
   };
   
@@ -281,44 +283,44 @@ export default function Home() {
         </div>
   
         <div className="contact" id="contact">
-        <h2>Contact Me</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Your Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <br/>
-          <label htmlFor="email">Your Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <br/>
+      <h2>Contact Me</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Your Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          required
+        />
+        <br />
+        <label htmlFor="email">Your Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          required
+        />
+        <br />
 
-          <label htmlFor="message">Your Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          ></textarea>
-          <br/>
+        <label htmlFor="message">Your Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleInputChange}
+          required
+        ></textarea>
+        <br />
 
-          <button type="submit">Send Message</button>
-        </form>
+        <button type="submit">Send Message</button>
+      </form>
 
-        <p>{status}</p>
-      </div>
+      <p>{status}</p>
+    </div>
       </main>
     );
   }
