@@ -91,8 +91,8 @@ export default function Home() {
       <p className="aboutMe  float-left"  style={{marginLeft: '5%', position: 'absolute', 
         top: '50%', width: '45%'
       }}>
-        I'm Brock Whitson. I'm about to graduate from St. Clair College's
-        Mobile Application Development program. I'm also a professional
+        I&apos;m Brock Whitson. I&apos;m about to graduate from St. Clair College's
+        Mobile Application Development program. I&apos;m also a professional
         baseball player. I have a solid background in Java, Swift, PHP, etc.
       </p> 
       <div className="floatImage" 
